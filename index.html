@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hobocu.com</title>
+  <style>
+    :root { --maxw: 720px; }
+    html,body { height: 100%; margin: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      display: grid; place-items: center;
+      background: #fafafa; color: #111;
+    }
+    .card {
+      width: min(92vw, var(--maxw));
+      text-align: center;
+      padding: 48px 28px;
+      background: #fff; border: 1px solid #eee; border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.04);
+    }
+    .logo { max-width: 220px; height: auto; margin: 0 auto 20px; display: block; }
+    h1 { margin: 0 0 12px; font-size: clamp(22px, 3vw, 28px); letter-spacing: .3px; }
+    p { margin: 8px 0; font-size: 16px; line-height: 1.5; color: #333; }
+    .muted { color: #666; font-size: 14px; }
+    .link { text-decoration: none; border-bottom: 1px solid currentColor; }
+  </style>
+</head>
+<body>
+  <main class="card" role="main">
+    <img src="logo.png" alt="Hobocu" class="logo" />
+    <h1>hobocu.com</h1>
+    <p>This domain is used for email, projects, and creative work by the Hobocu team.</p>
+    <p class="muted">Website contact:&nbsp;<span id="em"></span></p>
+  </main>
+
+  <!-- Simple JS to build the mailto at runtime (reduces basic scraping) -->
+  <script>
+    (function () {
+      const user = "web";           // choose the alias you want exposed (see note below)
+      const host = "hobocu.com";
+      const addr = user + "@" + host;
+      const a = document.createElement("a");
+      a.href = "mailto:" + addr;
+      a.className = "link";
+      a.textContent = addr;
+      document.getElementById("em").appendChild(a);
+    }());
+  </script>
+</body>
+</html>
