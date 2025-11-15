@@ -1,0 +1,82 @@
+/* share.css — Styling for Hobocu R2 Share Link UI
+   --------------------------------------------------
+   Matches the design tokens and look of hobocu.com.
+*/
+
+:root {
+  --bg: #f4f2ee;
+  --card: #efede9;
+  --ink: #232425;
+  --muted: #606569;
+  --accent: #3a7d7a;
+  --border: #e0ddd8;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+           Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial;
+  --base: 18px;
+  --lh: 1.6;
+  --radius: 16px;
+  --shadow: 0 6px 24px rgba(0,0,0,.04);
+  --space: clamp(16px, 2.8vw, 28px);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: var(--base);
+  line-height: var(--lh);
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: calc(var(--space)*1.25) var(--space) var(--space);
+}
+
+h1 {
+  font-size: clamp(22px, 3vw, 30px);
+  margin-bottom: var(--space);
+  text-align: center;
+  font-weight: 650;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: calc(var(--space) * 1.1);
+  box-shadow: var(--shadow);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+input, select, button, textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: var(--space);
+}
+button:hover { opacity: .9; }
+
+.result-box {
+  margin-top: var(--space);
+}
+
+.muted { color: var(--muted); margin-top: 6px; }
