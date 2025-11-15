@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hobocu — Generate Download Link</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="share.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>Generate a Download Link</h1>
+    <div class="card">
+
+      <label for="file">R2 Object Path</label>
+      <input id="file" type="text" placeholder="e.g. Test/Test.txt" />
+
+      <label for="exp" style="margin-top: var(--space);">Expiry</label>
+      <select id="exp">
+        <option value="900">15 minutes</option>
+        <option value="3600">1 hour</option>
+        <option value="86400">24 hours</option>
+        <option value="2592000" selected>30 days</option>
+      </select>
+
+      <button id="generate">Generate Link</button>
+
+      <div class="result-box">
+        <label for="result">Your Download Link</label>
+        <textarea id="result" rows="2" readonly></textarea>
+        <button id="copyBtn" style="margin-top:10px;">Copy to Clipboard</button>
+        <div id="status" class="muted"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="share.js" defer></script>
+
+</body>
+</html>
